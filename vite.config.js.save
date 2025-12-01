@@ -1,0 +1,34 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  base: '/Going-Local-Sources-Finder/', // GitHub repo name - ANPASSEN falls anders!
+  build: {
+    outDir: 'dist',
+    sourcemap: false
+  }
+})
+git add .
+git commit -m "Fix base URL case"
+git push
+git remote set-url origin https://github.com/ogersema/Going-Local-Sources-Finder.git
+git add .
+git commit -m "Fix base URL"
+git push
+cd ~/lokaler-quellen-finder
+npm install
+npm run build
+# Lokaler Test ob der Build funktioniert
+cd ~/lokaler-quellen-finder
+npm install
+npm run build
+cd ~/lokaler-quellen-finder
+npm install
+git add package-lock.json
+git commit -m "Add package-lock.json"
+git push
+cd ~/lokaler-quellen-finder
+ls -la package-lock.json
+
